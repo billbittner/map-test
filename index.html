@@ -44,41 +44,7 @@
 		</div>
 	</div>
 	<!-- google maps javascripts--> <!-- why doesn't it have to say type="text/javascript"-->
-    <script>  
-	    var map;
-	    function initMap() {
-	    	//set center of map 
-	        var centerLatLong = {lat: 34.082517, lng: -118.280028};
-	        //create a map
-	        var map = new google.maps.Map(document.getElementById('map'), {
-	          	zoom: 13,
-	          	center: centerLatLong
-	        });
-	        //create a list of markers
-			var markerList = [{lat: 34.082517, lng: -118.280028},{lat: 34.086907, lng: -118.275843}];
-	    	//place all the markers from the list
-	        for(i=0; i < markerList.length; i++){
-				var markerToMake = markerList[i];
-				console.log(markerToMake);
-				//create the marker
-				var marker = new google.maps.Marker({
-			        position: markerToMake,
-			        map: map,
-			        title: 'Hello World!'
-		        });
-		        //create the content for the marker
-		        var contentString = "this is you";
-			    //make the infowindow
-				var infowindow = new google.maps.InfoWindow({
-					content: contentString
-				});
-				//assign the infowindow to the marker
-				marker.addListener('click', function() {
-					infowindow.open(map, marker);
-			    });
-		    };
-		};
-	</script>
+    <script src = "javaScript.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbclTHvLjlpEPMK_xC5wHJdyvozSb_Cz0&callback=initMap"
     async defer></script>
 </body>
